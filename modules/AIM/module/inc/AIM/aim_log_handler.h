@@ -53,9 +53,6 @@ typedef struct aim_log_handler_config_s {
     /** Name of debug log file, optionally with full or relative path */
     char* debug_log_name;
 
-    /** Name of rotate log file, optionally with full or relative path */
-    char* rotate_log_name;
-
     /** Maximum number of bytes beyond which the debug log will be rotated */
     uint32_t max_debug_log_size;
 
@@ -81,12 +78,6 @@ void aim_log_handler_init(void);
  */
 void aim_log_handler_denit(void);
 
-void
-aim_log_handler_basic_config_get(uint32_t *debug_logs,
-                                 uint32_t *debug_file_size);
-void
-aim_log_handler_basic_config_set(uint32_t debug_logs,
-                                 uint32_t debug_file_size);
 
 /**
  * Create an AIM log handler instance.
@@ -116,7 +107,6 @@ void aim_log_handler_logf(void* cookie, aim_log_flag_t flag, const char* str);
  * @brief Basic initialization for console and daemonized clients.
  * @param ident The syslog ident to use (optional)
  * @param debug_log_file  The name of the debug log file (optional)
- * @param rotate_log_file  The name of the rotate log file (optional)
  * @param max_debug_size   Maximum debug log size.
  * @param max_debug_count  Maximum number of rotated debug logs.
  *
@@ -125,7 +115,6 @@ void aim_log_handler_logf(void* cookie, aim_log_flag_t flag, const char* str);
  */
 int aim_log_handler_basic_init_all(const char* ident,
                                    const char* debug_log_file,
-                                   const char* rotate_log_file,
                                    int max_debug_log_size,
                                    int max_debug_logs);
 
