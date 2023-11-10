@@ -428,5 +428,5 @@ aim_daemonize(aim_daemon_config_t* config,
 
 
 #else
-int __not_empty__;
+//int __not_empty__;
 #endif

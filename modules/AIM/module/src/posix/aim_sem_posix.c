@@ -262,5 +262,5 @@ aim_sem_take_timeout(aim_sem_t sem, uint64_t usecs)
 }
 
 #else
-int not_empty;
+//int not_empty;
 #endif
